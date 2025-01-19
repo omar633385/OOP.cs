@@ -59,7 +59,7 @@ namespace Session04.Part_1
 
         public override string ToString()
         {
-            return $"{Real}+{Imaginary}j";
+            return $"{Real}+{Imaginary}i";
         }
         #endregion
 
