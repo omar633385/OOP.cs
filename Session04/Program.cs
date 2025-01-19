@@ -1,10 +1,17 @@
-﻿namespace Session04
+﻿using Session04.Part_2;
+
+namespace Session04
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Duration D1 = new Duration(1, 10, 15);
+            Console.WriteLine(D1);
+            Duration D2 = new Duration(7800);
+            Console.WriteLine(D2);
+            Duration D3 = new Duration(666);
+            Console.WriteLine(D3);
         }
     }
 }

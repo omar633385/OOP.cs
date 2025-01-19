@@ -12,7 +12,7 @@ namespace Session04.Part_1
     ///b) Create a derived class named Manager that overrides the Work method to print "Manager is managing". 
     ///*Ensure that the Manager class also calls the Work method of the Employee class within its Overridden method.
     ///
-    public virtual void Print()
+        public virtual void Print()
         {
             Console.WriteLine("Employee is  working");
         }
