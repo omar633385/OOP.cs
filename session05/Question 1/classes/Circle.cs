@@ -8,18 +8,11 @@ namespace session05.Question_1.classes
 {
     internal class Circle : IShape
     {
-
-        private double radius;
-
-        public double Radius
-        {
-            get { return radius; }
-            set { radius = value; }
-        }
+        public double Radius { get; set; }
 
         public double Area
         {
-            get { return radius * radius * Math.PI; }
+            get { return Radius * Radius * Math.PI; }
         }
 
         public Circle(double radius)
