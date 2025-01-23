@@ -1,5 +1,7 @@
 ﻿using session05.Question_1.classes;
 using session05.Question_2.Interfaces;
+using session05.Question_3.classes;
+using session05.Question_3.Interfaces;
 
 namespace session05
 {
@@ -32,7 +34,17 @@ namespace session05
             }
             else
                 Console.WriteLine("You Entered wrong credentials");
-         
+
+            #endregion
+
+            #region Q3
+            INotificationService Emailservice = new EmailNotificationService();
+            Emailservice.SendNotification("omar@gmail.com","Hi");
+            INotificationService SmsService =new SmsNotificationService();
+            SmsService.SendNotification("omar","Hi");
+
+            INotificationService service =new PushNotificationService();
+            service.SendNotification("omar", "Hi");
             #endregion
         }
     }
