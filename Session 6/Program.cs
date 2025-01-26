@@ -1,10 +1,17 @@
 ﻿using Session_6.First_Project;
 using Session_6.Second_Project;
+using Session_6.ThirdProject.Discounts;
+using Session_6.ThirdProject.User;
 
 namespace Session_6
 {
     internal class Program
     {
+        [Flags]
+        enum User
+        {
+            Regular=1, Premium=2, Guest=4
+        }
         static void Main(string[] args)
         {
             #region First Project
@@ -105,6 +112,60 @@ namespace Session_6
             #endregion
 
             #region ThirdProject
+            try
+            {
+                bool flag;
+                User user;
+                decimal price;
+                int quantity;
+                do
+                {
+                    Console.WriteLine($"Enter Type Of User");
+                    Console.WriteLine(" Hint : 1 for Regular , 2 for Premium , 4 forGuest");
+                    flag = Enum.TryParse(Console.ReadLine(), out user);
+
+                } while (!flag);
+                do
+                {
+                    Console.WriteLine($"Enter Price");
+                    flag = decimal.TryParse(Console.ReadLine(), out price);
+
+                } while (!flag || price <= 0) ;
+                do
+                {
+                    Console.WriteLine($"Enter Quantity");
+                    flag = int.TryParse(Console.ReadLine(), out quantity);
+
+                } while (!flag || quantity <= 0);
+                if (user == User.Guest)
+                {
+                    GuestUser guestUser = new GuestUser();
+                    decimal discount=guestUser.GetDiscount().CalculateDiscount(price, quantity);
+                    Console.Write($"Total Discount is:{discount}\n");
+                    Console.Write($"Total Price is :{price*quantity-discount}");
+
+                }
+                else if (user == User.Premium)
+                {
+                    PremiumUser premiumUser = new PremiumUser();
+                    decimal discount =premiumUser.GetDiscount().CalculateDiscount(price, quantity);
+                    Console.Write($"Total Discount is:{discount}\n");
+                    Console.Write($"Total Price is :{price*quantity - discount}");
+                }
+                else
+                {
+                    RegularUser regularUser = new RegularUser();
+                    decimal discount = regularUser.GetDiscount().CalculateDiscount(price,quantity);
+                    Console.Write($"Total Discount is:{discount}\n");
+                    Console.Write($"Total Price is :{price*quantity -discount}");
+                }
+
+            }
+            catch (Exception ex) {
+
+                Console.WriteLine(ex.Message);
+            }
+            
 
             #endregion
 

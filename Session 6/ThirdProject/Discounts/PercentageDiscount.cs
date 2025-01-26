@@ -11,14 +11,14 @@ namespace Session_6.ThirdProject.Discounts
     {
 
 
-        public int Percentage { get; set; }
+        public decimal Percentage { get; set; }
         public PercentageDiscount(int percentage)
         {
             Percentage = percentage;
         }
         public override decimal CalculateDiscount(decimal price, int quantity)
         {
-            return price * quantity * (Percentage / 100);
+            return Math.Round(price * quantity * (Percentage / 100),2);
         }
     }
 }
