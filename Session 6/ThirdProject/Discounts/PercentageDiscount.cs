@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Session_6.ThirdProject
+namespace Session_6.ThirdProject.Discounts
 {
     internal class PercentageDiscount : Discount
     {
-        
+
 
         public int Percentage { get; set; }
         public PercentageDiscount(int percentage)
@@ -18,7 +18,7 @@ namespace Session_6.ThirdProject
         }
         public override decimal CalculateDiscount(decimal price, int quantity)
         {
-            return price*quantity*(Percentage / 100);
+            return price * quantity * (Percentage / 100);
         }
     }
 }

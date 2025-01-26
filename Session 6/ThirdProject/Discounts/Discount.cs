@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Session_6.ThirdProject
+namespace Session_6.ThirdProject.Discounts
 {
     internal abstract class Discount
     {

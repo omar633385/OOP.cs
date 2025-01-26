@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Session_6.ThirdProject
+namespace Session_6.ThirdProject.Discounts
 {
     internal class FlatDiscount : Discount
     {
-        
+
 
         public int DeductedAmount { get; set; }
         public FlatDiscount(int amount)
