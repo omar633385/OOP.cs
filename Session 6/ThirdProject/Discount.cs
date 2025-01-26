@@ -9,7 +9,7 @@ namespace Session_6.ThirdProject
     internal abstract class Discount
     {
         public string Name { get; set; }
-        public abstract double CalculateDiscount(decimal price, int quantity);
+        public abstract decimal CalculateDiscount(decimal price, int quantity);
 
     }
 }
