@@ -97,10 +97,14 @@ namespace Session_6
 
             #region SecondProject
 
-            Console.WriteLine(Maths.Add(1, 0));
-            Console.WriteLine(Maths.Subtract(1, 0));
-            Console.WriteLine(Maths.Multiply(1, 0));    
-            Maths.Divide(1, 0);
+            //Console.WriteLine(Maths.Add(1, 0));
+            //Console.WriteLine(Maths.Subtract(1, 0));
+            //Console.WriteLine(Maths.Multiply(1, 0));    
+            //Maths.Divide(1, 0);
+
+            #endregion
+
+            #region ThirdProject
 
             #endregion
 
